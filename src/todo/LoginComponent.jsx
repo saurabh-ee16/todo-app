@@ -24,30 +24,26 @@ class LoginComponent extends Component {
 
     render() {
         return (
-            <form>
+            <form className="form-signin">
+                {/* <h1>Login</h1> */}
+                <h1 class="h3 mb-3 font-weight-normal">Please login</h1>
                 {/* <!-- Email input --> */}
-                <div class="form-outline mb-4">
-                    <label class="form-label" htmlFor="username">User name:</label>
-                    <input class="form-control" type="text" id="username" name="username" placeholder="username" value={this.state.username} onChange={this.handleChange} required />
+                
+                <input type="text" className="form-control" id="username" name="username" placeholder="username" value={this.state.username} onChange={this.handleChange} required />
 
-                </div>
 
                 {/* <!-- Password input --> */}
-                <div class="form-outline mb-4">
-                    <label class="form-label" htmlFor="password">Password:</label>
-                    <input class="form-control" type="password" id="password" name="password" value={this.state.password} onChange={this.handleChange} required />
-
-                </div>
+                
+                <input type="password" className="form-control" id="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="password" required />
 
                 {/* <!-- Submit button --> */}
-                <div>
-                    <button onClick={this.loginClicked} class="btn btn-primary btn-block">Login</button>
+                <div className="container">
+                    <button onClick={this.loginClicked} class="btn btn-success">Sign in</button>
                 </div>
                 <div id="loginMsg">
                     <IsValidCredentials hasLoginFailed={this.state.hasLoginFailed} hasLoginSuccess={this.state.showSuccessMessage}></IsValidCredentials>
                 </div>
             </form>
-
         )
 
     }
